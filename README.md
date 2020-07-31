@@ -1,7 +1,12 @@
 
-## Cat Adoption Microservice
+## Open Charge Map Data Cleaning Workflow as a Microservice
 
-### 3 Containers as named by Docker Compose:
+A project for the Data Science grad program at UIUC, CS 513 Data Cleaning for Spring 2020 semester.
+
+### Obtain latest data file from [OCM Project](https://github.com/openchargemap/ocm-data)
+The poi.json file is too large to include in this repo, so it has been added to the .gitignore. It belongs in the docker-entrypoint-initdb.d directory so that it can be loaded with seed.js file.
+
+### Microservice Architecture based on 3 Containers as named by Docker Compose:
 * ocmdata_nest: [Nest](https://github.com/nestjs/nest) framework (TypeScript) - port 3400
 * ocmdata_mongodb: Mongo container initialized with JSON templates and Nest user - port 27017
 * ocmdata_mongoadmin: Mongo-Express for web-based mongo admin interface and its own user - port 8081
