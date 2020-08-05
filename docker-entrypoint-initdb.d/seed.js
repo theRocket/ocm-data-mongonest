@@ -14,7 +14,7 @@ db.createUser(
   }
 )
 //ensure a fresh start
-db.poi.drop();
-db.createCollection('poi')
+db.pois.drop();
+db.createCollection('pois')
 
 //import will be handled separately

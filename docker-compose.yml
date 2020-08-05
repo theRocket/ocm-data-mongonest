@@ -40,30 +40,30 @@ services:
     depends_on: 
       - db-mongo
 
-  main:
-  # image is provided by docker build of local app using Dockerfile
-    container_name: ocmdata_nest
-    restart: always
-    build:
-      context: .
-      target: development
-    volumes:
-      - .:/usr/src/app
-      - /usr/src/app/dist
-      - /usr/src/app/node_modules
-    ports:
-      - 3400:3000 # DON'T CONFLICT WITH MAIN PROTEUS APP LOCALLY
-      - 9229:9229 # FOR DEBUG
-    command: npm run start:debug
-    env_file: ./config/environments/local.env # CHANGE MANUALLY BY ENV?
-    networks:
-      - netty
-    depends_on:
-      - db-mongo
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "3"
+  # main:
+  # # image is provided by docker build of local app using Dockerfile
+  #   container_name: ocmdata_nest
+  #   restart: always
+  #   build:
+  #     context: .
+  #     target: development
+  #   volumes:
+  #     - .:/usr/src/app
+  #     - /usr/src/app/dist
+  #     - /usr/src/app/node_modules
+  #   ports:
+  #     - 3400:3000 # DON'T CONFLICT WITH MAIN PROTEUS APP LOCALLY
+  #     - 9229:9229 # FOR DEBUG
+  #   command: npm run start:debug
+  #   env_file: ./config/environments/local.env # CHANGE MANUALLY BY ENV?
+  #   networks:
+  #     - netty
+  #   depends_on:
+  #     - db-mongo
+  #   logging:
+  #     options:
+  #       max-size: "10m"
+  #       max-file: "3"
 
 networks:
   netty:
