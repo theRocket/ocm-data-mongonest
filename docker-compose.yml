@@ -9,7 +9,7 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
       # the right hand side are loaded from .env
-    image: mongo:${DB_VERSION}
+    image: mongo:${DB_VERSION} # now using separate Dockerfile to import tdata
     restart: always
     networks:
       - netty
@@ -20,6 +20,9 @@ services:
     #- ./mongo/data:/data/db #Helps to store MongoDB data in `./mongo/data`    
     # copies over the seed data into mongo container to initialize users and database
      - ./docker-entrypoint-initdb.d/seed.js:/docker-entrypoint-initdb.d/seed.js:ro
+     - ./docker-entrypoint-initdb.d/poi.json:/docker-entrypoint-initdb.d/poi.json:ro
+     - ./docker-entrypoint-initdb.d/poi.schema.json:/docker-entrypoint-initdb.d/poi.schema.json:ro
+     - ./docker-entrypoint-initdb.d/reference.json:/docker-entrypoint-initdb.d/reference.json:ro
 
   db-mongo-admin:
     container_name: ocmdata_mongoadmin

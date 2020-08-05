@@ -14,25 +14,7 @@ db.createUser(
   }
 )
 //ensure a fresh start
-db.adoptions.drop();
-db.createCollection('adoptions')
-db.adoptions.insertMany([
-  {
-    name: 'Beast',
-    breed: 'Maine Coon',
-    adopted: {
-      date: '2020-04-01',
-      owner: 'Bob Thross',
-      phone: '360-972-0456'
-    }
-  },
-  {
-    name: 'Lilac',
-    breed: 'Tonkinese',
-    adopted: {
-      date: '2020-04-10',
-      owner: 'Mary Fantwonette',
-      phone: '208-664-4885'
-    }
-  }
-])
+db.poi.drop();
+db.createCollection('poi')
+
+//import will be handled separately
