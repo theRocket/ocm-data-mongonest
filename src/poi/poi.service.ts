@@ -14,4 +14,8 @@ export class POIService {
   async findByID(id:number): Promise<POI> {
     return this.poiModel.findOne({"ID": id}).exec();
   }
+
+  async findUsageCosts(): Promise<string[]> {
+    return this.poiModel.distinct("UsageCost").exec();
+  }
 }

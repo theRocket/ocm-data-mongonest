@@ -15,4 +15,9 @@ export class POIController {
   async findByID(@Param() params): Promise<POI> {
     return this.POIService.findByID(params.id);
   }
+
+  @Get('/costs/usage')
+  async distinctUsageCost(): Promise<string[]> {
+    return (await this.POIService.findUsageCosts()).sort();
+  }
 }
