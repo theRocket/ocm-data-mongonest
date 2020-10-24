@@ -2,6 +2,9 @@
 ## Open Charge Map Data Cleaning Workflow as a Microservice
 
 A project for the Data Science grad program at UIUC, CS 513 Data Cleaning for Spring 2020 semester.
+
+#### - [download Final Report PDF (1.7 Mb)](./FinalAssessmentReport.pdf)
+
 See also my main project portfolio page: https://therocket.github.io/
 
 ### Obtain latest data file from [OCM Project](https://github.com/openchargemap/ocm-data)
